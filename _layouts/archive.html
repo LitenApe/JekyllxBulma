@@ -1,0 +1,29 @@
+---
+layout: default
+---
+<article>
+    <div class="hero is-primary">
+        <div class="hero-body has-text-centered">
+            <h1 class="title">
+                {{ page.title | escape }}
+            </h1>
+        </div>
+    </div>
+
+    <section class="section">
+        <div class="container">
+            <ul>
+                {% for post in site.posts %}
+                <li class="archive">
+                    <a href="{{ post.url | relative_url }}">
+                        <p>
+                            {{ post.date | date: "%-d %b, %Y" }} -
+                            {{ post.title | escape }}
+                        </p>
+                    </a>
+                </li>
+                {% endfor %}
+            </ul>
+        </div>
+    </section>
+</article>

@@ -1,0 +1,22 @@
+---
+layout: default
+---
+
+<section class="section">
+    <div class="container">
+        <ul>
+            {% for post in site.posts %}
+                <li class="post-li">
+                    <a class="post" href="{{ post.url | relative_url }}">
+                        <h1 class="title">{{ post.title | escape }}</h1>
+                        <h2 class="subtitle">{{ post.date | date: "%-d %b, %Y" }}
+                        {% if post.picture %}
+                            <img class="post-photo" src="{{ site.baseurl }}/assets/images/{{ post.picture }}" />
+                        {% endif %}
+                        <p>{{ post.excerpt }}</p>
+                    </a>
+            </li>
+            {% endfor %}
+        </ul>
+    </div>
+</section>
